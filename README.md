@@ -32,4 +32,8 @@ DB e respectivamente na lista;
 
 #### BOTÂO "DELETE"
 
+<<<<<<< HEAD
 Ao clicar no "Delete" o usuario selecionado na lista eh excluido permanentemente do DB e removido da Lista;
+=======
+Ao clicar no "Delete" o usuario selecionado na lista eh excluido permanentemente do DB e removido da Lista
+>>>>>>> 476ff5b6ccfb81a45202186ef9457f925e1d8a43

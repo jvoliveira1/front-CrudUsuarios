@@ -1,46 +1,35 @@
-# Getting Started with Create React App
+# A APLICAÇÂO
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Essa aplicação foi feita em React e gera uma tela com um formulario, uma lista e 2 botoes.
 
-## Available Scripts
+## O FORMULÁRIO
 
-In the project directory, you can run:
+O formulario recebe as informaçoes Nome, CPF, Email e Telefone por input, que sao required e ao clicar no titulo de cada campo o input respectivo eh 
+focado, e ao clicar no botao "Adicionar" no final do formulario, gera-se um objeto Usuario que possui:
+- Nome : nome do usuario;
+- Cpf: cpf do usuario que deve ser no formato xxx.xxx.xxx-xx (e que eh uma chave unica e eh tratado no back end para nao ser possivel ter 2 iguais salvo no DB);
+- Email: email do usuario;
+- Telefone: telefone do ususario;
+- Id: gerado pelo DB de forma unica e que serve nesse programa como chave de identificacao;
+- Selecionado: boleano de identificacao para item selecionado para se comunicar qual usuario esta sendo tratado no momento;
+- Ativo: se o usuario eh um usuario ativo (todos recebem false pois esse dado so eh usado pelo back end)
+- DataDeCraicao: data que o usuario foi criado (so eh utilizado no Back end;
 
-### `npm start`
+### BOTÂO DO FORMULÁRIO
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Ao clicar no botao "Adicionar", esse objeto eh gerado e mandado para o back end para ser salvo no DB e passado pra lista atraves do DB.
+O botao "Adicionar" pode virar "Update" quando um usuario esta selecionado, desta forma os dados salvos no DB desse ususario especifico volta para os 
+inputs do formulario para serem tratados novamente e quando se clica no botao "Update" os dados alterados sao enviado para o DB para serem alterado no 
+DB e respectivamente na lista;
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+#### Lista
 
-### `npm test`
+A lista recebe todos os usuario do DB e traz pra tela de forma onde possa selecionar cada um deles apenas clicando no usuario desejado, mudando de cor
+o usuario que foi selecionado para dar um feedback visual.
+Ao selecionar esse usuario muda tambem o botar do formulario de "Adicionar" para "Update" e os dados salvos no DB desse ususario especifico volta para os 
+inputs do formulario para serem tratados novamente e quando se clica no botao "Update" os dados alterados sao enviado para o DB para serem alterado no 
+DB e respectivamente na lista;
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### BOTÂO "DELETE"
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Ao clicar no "Delete" o usuario selecionado na lista eh excluido permanentemente do DB e removido da Lista
